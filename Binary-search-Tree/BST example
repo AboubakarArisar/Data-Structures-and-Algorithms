@@ -1,0 +1,59 @@
+public class Bst {
+    class Node {
+        int data;
+        Node left = null, right = null;
+
+        Node(int val) {
+            this.data = val;
+        }
+    }
+
+    Node root;
+
+    public Node insert(Node root, int val) {
+        if (root == null) {
+            return new Node(val);
+        }
+        if (root.data > val) {
+            root.left = insert(root.left, val);
+        } else {
+            root.right = insert(root.right, val);
+        }
+        return root;
+    }
+
+    public void display(Node root) {
+        if (root == null) {
+            return;
+        }
+        display(root.left);
+        System.out.print(root.data + " ");
+        display(root.right);
+    }
+    public Node search(Node root , int key) {
+        if(root == null){
+            return null;
+        }
+        else if(root.data == key){
+            return root;
+        }
+        else if(root.data > key) {
+            return search(root.right, key);
+        }
+        
+        return search(root.left, key);
+        
+    }
+
+    public static void main(String[] args) {
+        Bst bst = new Bst();
+        bst.root = bst.insert(bst.root, 1);
+        bst.root = bst.insert(bst.root, 4);
+        bst.root = bst.insert(bst.root, 5);
+    System.out.println("inorder dispaly in Binary search tree")
+        bst.display(bst.root);
+        System.out.println();
+        
+        System.out.println(bst.search(bst.root, 5));
+    }
+}
