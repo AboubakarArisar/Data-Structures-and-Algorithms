@@ -24,6 +24,6 @@ public class Main {
 
 /*
 
-Time complexity in Worst case O(n);
+Time complexity in Worst case O(n ^ 2);
 
 */
