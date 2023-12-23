@@ -2,7 +2,7 @@ package DSAFinal;
 import java.util.*;
 public class Hashing {
     public static void main(String[] args) { 
-        hash hs = new hash(5);
+        hash hs = new hash(5); 
         hs.insert(0);
         hs.insert(1);
         hs.insert(2);
